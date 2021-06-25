@@ -5,7 +5,7 @@ const StylesLoginScreen = StyleSheet.create({
     flex: 1,
   },
   imageLogin: {
-    marginTop: '20%',
+    marginTop: '30%',
     width: 200,
     height: 200,
     alignSelf: 'center',
