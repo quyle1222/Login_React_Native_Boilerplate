@@ -7,5 +7,6 @@ const App = () => (
   <Provider store={store}>
     <ApplicationNavigator />
   </Provider>
+
 )
 export default App

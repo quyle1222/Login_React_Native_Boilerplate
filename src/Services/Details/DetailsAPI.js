@@ -1,10 +1,9 @@
 import { Config } from '@/Config'
-import { addNewUser } from '@/Store/User/Action'
-import store from '@/Store/User/Store'
 import axios from 'axios'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import GetLocalStorage from '../LocalStorage/GetLocalStorage'
+import store from '@/Store/User/Store'
+import { addNewUser } from '@/Store/User/Action'
 
 function DetailsAPI() {
   const [User, setUser] = useState('')
@@ -21,11 +20,7 @@ function DetailsAPI() {
   })
     .then(res => {
       if (res.data.success == true) {
-        const Obj = {
-          id: 107,
-          name: 'hien hien',
-        }
-        useDispatch(addNewUser(Obj))
+        store.dispatch(addNewUser(res.data.data))
       } else {
         return null
       }

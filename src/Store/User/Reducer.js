@@ -1,19 +1,13 @@
 const initialState = {
-  infoUser: {
-    id: 1,
-    name: 'default',
-  },
-  activeID: null,
+  infoUser: {},
 }
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_USER': {
-      const newObj = [...state.infoUser]
-      newObj.push(action.payload)
       return {
         ...state,
-        infoUser: newObj,
+        infoUser: action.payload,
       }
     }
     case 'DEL_USER': {
